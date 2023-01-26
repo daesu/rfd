@@ -1,0 +1,41 @@
+#!/bin/bash
+
+retrieve_branches () {
+	branches=$(git branch -l -a | tr '*' ' ' | awk '{gsub(/remotes\/origin\//, ""); print}' | grep -vE '[a-zA-Z]') 
+	IFS=$'\n' read -rd '' -a branch_array <<< "$branches"
+	sorted=($(printf '%s\n' "${branch_array[@]}" | sort -nr))
+	echo $sorted
+}
+
+retrieve_sorted_numeric_branches () {
+	branches=$(git branch -l | tr '*' ' ')
+	sans_remote_prefix=$(echo "$branches" | awk '{gsub(/remotes\/origin\//, ""); print}')
+	non_alpha_branches=$(echo "$sans_remote_prefix" | grep -vE '[a-zA-Z]')
+	# echo $non_alpha_branches
+	IFS=$'\n' read -rd '' -a branch_array <<< "$non_alpha_branches"
+	echo $branch_array
+}
+
+new () {
+	branches=$(retrieve_branches)
+
+	new_branch_name=0001
+	if (( ${#branches[@]} == 0 )); then
+		echo "creating initial RFD $new_branch_name"
+	else
+		new_branch_name=$(printf "%04d" $((10#${branches[0]} + 1)))
+		echo "creating new RFD $new_branch_name"
+	fi
+
+	git branch $new_branch_name
+	git checkout $new_branch_name
+
+	mkdir rfd/$new_branch_name
+	cp template/README.md rfd/$new_branch_name/README.md
+
+	echo "----------------------------------------------------------------"
+	echo "RFD ${new_branch_name} created at rfd/$new_branch_name/README.md"
+	echo "To reserve your RFD number push the branch to the remote. 'git push -u origin $new_branch_name'"
+}
+
+new
