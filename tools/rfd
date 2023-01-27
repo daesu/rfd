@@ -7,20 +7,11 @@ retrieve_branches () {
 	echo $sorted
 }
 
-retrieve_sorted_numeric_branches () {
-	branches=$(git branch -l | tr '*' ' ')
-	sans_remote_prefix=$(echo "$branches" | awk '{gsub(/remotes\/origin\//, ""); print}')
-	non_alpha_branches=$(echo "$sans_remote_prefix" | grep -vE '[a-zA-Z]')
-	# echo $non_alpha_branches
-	IFS=$'\n' read -rd '' -a branch_array <<< "$non_alpha_branches"
-	echo $branch_array
-}
-
 new () {
 	branches=$(retrieve_branches)
 
 	new_branch_name=0001
-	if (( ${#branches[@]} == 0 )); then
+	if [ -z "$branches" ] || [ ${#branches[@]} == 0 ]; then
 		echo "creating initial RFD $new_branch_name"
 	else
 		new_branch_name=$(printf "%04d" $((10#${branches[0]} + 1)))
