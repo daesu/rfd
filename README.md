@@ -54,7 +54,7 @@ The RFD document needs to include a brief amount of metadata, for example.
 
 ```markdown
 ---
-authors: Han Solo <han.solo@shot.first.org>
+authors: Jon Snow <jon.snow@winterfell.org>
 state: draft
 discussion: <link to discussion>
 ---
@@ -94,7 +94,7 @@ A `discussion` field should be added to the RFD metadata, with a URL that points
 
 ```markdown
 ---
-authors: Chewbacca <chewie77@falcon.org>
+authors: Rick Grimes <grimey@cops.org>
 state: draft
 discussion: https://github.com/xxxx/rfd/issues?q="RFD+0001"
 ---
