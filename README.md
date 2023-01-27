@@ -26,7 +26,7 @@ To run the linter;
 
 If the script to create a new RFD fails or you wish to do it manually the procedure is; 
 1. Pull the latest from the remote.
-2. Check the latest `branch` created. `git branch -l -a` (Note: branche names should be in the numeric form xxxx. e.g. 0001, 0002 etc)
+2. Check the latest `branch` created. `git branch -l -a` (Note: branch names should be in the numeric form xxxx. e.g. 0001, 0002 etc)
 3. Create a new branch in sequence. e.g. If the latest branch created was `0012` you would create a new branch `0013`. 
 4. Make a new directory inside `rfd` with your branch name. `mkdir rfd/0013`
 5. Copy the template to your new subdir. `cp template/README.md rfd/0013/README.md`
