@@ -1,10 +1,10 @@
 .PHONY: all
 all:
 
-.PHONY: check
-check:
-	./tools/rfdlint
-	@echo "check ok"
-
+.PHONY: new lint
 new:
 	./tools/rfd
+
+lint:
+	./tools/rfdlint
+	@echo "linter okay"
