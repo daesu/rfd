@@ -10,6 +10,7 @@ Add new RFDs to the index in the form
 
 ## Getting started
 There are two tools included in this repo to simplify the creation of RFD's. 
+
 `tools/rfd` to create a new RFD
 
 `tools/rfdlint` to do a simple lint check on the documents.
