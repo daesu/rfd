@@ -3,8 +3,7 @@ A Request for Discussion (RFD) is a document or a discussion thread that is used
 
 ## RFDs Index
 Add new RFDs to the index in the form
-```| draft | [RFD xxxx ](./rfd/xxxx/README.md) |```
-
+```| draft | [RFD 1 ](./rfd/xxxx/README.md) |```
 
 | state    | RFD |
 | -------- | ------------------------------------------------------------- |
@@ -83,8 +82,6 @@ Note: A similar metadata reference should be added to this document in the `RFD'
 4. abandoned
 
 `draft` indicates that the document is not yet ready for discussion.
-`discussion` indicates the document is under active discussion.
-`published` indicates the document has been approved.
 
 `discussion` indicates the document is under active discussion.
 
