@@ -117,4 +117,4 @@ discussion: https://github.com/xxxx/rfd/issues?q="RFD+0001"
 ```
 
 ## RFD Acceptance
-Participants in the RFD discussion should be requested for review on the branch PR. Once the discussion has concluded including any requested changes made you should change the statis to `published`, push all changes to the remote and request approval on the PR from discussion participants. Once approved it should be merged to the main branch. 
+Participants in the RFD discussion should be requested for review on the branch PR. Once the discussion has concluded including any requested changes made you should change the statis to `published`, push all changes to the remote and request approval on the PR from discussion participants. Once approved the RFD branch should be merged to the main branch. 
